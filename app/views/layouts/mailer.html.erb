@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <style>
-      /* Email styles need to be inline */
-    </style>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all',
+                               'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application',
+                               'data-turbolinks-track': 'reload' %>
+    <%= render 'layouts/shim' %>
   </head>
-
   <body>
-    <%= yield %>
+    <%= render 'layouts/header' %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
